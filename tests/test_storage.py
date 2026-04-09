@@ -97,8 +97,13 @@ async def test_zipwriter_buffer(zip_writer: type[AioZipWriter]) -> None:
     ],
 )
 async def test_zipwriter_file(zip_writer: type[AioZipWriter]) -> None:
-    with tempfile.NamedTemporaryFile(prefix="test_storage", suffix=".zip") as f:
-        await _test_zipwriter(f.name, zip_writer)
+    fd, path = tempfile.mkstemp(prefix="test_storage", suffix=".zip")
+    os.close(fd)
+    try:
+        await _test_zipwriter(path, zip_writer)
+    finally:
+        if os.path.exists(path):
+            os.remove(path)
 
 
 @pytest.mark.asyncio

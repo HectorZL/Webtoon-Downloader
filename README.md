@@ -2,7 +2,7 @@
 <p align="center">
   <h2 align="center">Webtoon Downloader</h2>
   <p align="center">
-    A fast CLI for downloading chapters from Webtoons. ⚡📚
+    A fast and premium GUI & CLI for downloading chapters from Webtoons. ⚡📚
     <br />
     <br />
     <a href="https://github.com/Zehina/Webtoon-Downloader/issues">Report Bug</a>
@@ -19,8 +19,11 @@
 [![License](https://img.shields.io/github/license/Zehina/webtoon-downloader)](https://img.shields.io/github/license/Zehina/webtoon-downloader)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Zehina/Webtoon-Downloader/da001b7f9198a842610e09d3e45a31b0f5e0b9e9/docs/imgs/demo.svg">
+  <img src="src/gui.png" alt="Webtoon Downloader GUI" width="700">
 </p>
+
+## Language | Idioma
+**🇬🇧 English** | [🇪🇸 Español](README.es.md)
 
 ## What It Does 🌐
 
@@ -37,23 +40,32 @@ Supported site:
 
 - [https://www.webtoons.com/](https://www.webtoons.com/)
 
-## Quick Start 🚀
+## Usage 🚀
 
-Requires Python `3.10+`.
+### ✨ Premium GUI
+The easiest way to use Webtoon Downloader is through the new graphical interface. It provides a user-friendly way to configure downloads and track progress.
 
-Install with `uv`:
+**To run the GUI:**
+1. Ensure you have the requirements installed:
+   ```bash
+   pip install -r requirements.txt  # Or use 'uv sync'
+   ```
+2. Launch the application:
+   ```bash
+   python gui.py
+   ```
 
+### 💻 Fast CLI
+For power users, the command-line interface offers speed and scriptability.
+
+**Install CLI:**
 ```bash
 uv tool install webtoon_downloader
-```
-
-Or with `pipx`:
-
-```bash
+# OR
 pipx install webtoon_downloader
 ```
 
-Download a series:
+**Download a series:**
 
 ```bash
 webtoon-downloader "https://www.webtoons.com/en/.../list?title_no=..."
